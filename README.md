@@ -2,7 +2,7 @@
 
 ![](./img/stackoverflow.png)
 
-Indra's Stackoverflow Examples
+Indra's stackoverflow Examples
 =================================
 Examples related to my answers given by me in [stackoverflow](https://stackoverflow.com/users/8012379/indra-basak)
 
