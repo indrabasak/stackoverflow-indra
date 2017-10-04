@@ -1,0 +1,11 @@
+# use a random unassigned HTTP port by scanning for free port
+server:
+  port: 8080
+
+
+# For Spring Actuator /info endpoint
+info:
+    artifact: book
+    name: book
+    description: Book Service
+    version: 1.0.0

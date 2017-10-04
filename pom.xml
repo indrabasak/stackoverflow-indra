@@ -9,5 +9,6 @@
   <url>http://maven.apache.org</url>
   <modules>
     <module>custom-classloader</module>
+    <module>spring-aop-param</module>
   </modules>
 </project>
