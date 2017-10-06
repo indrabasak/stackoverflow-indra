@@ -10,5 +10,6 @@
   <modules>
     <module>custom-classloader</module>
     <module>spring-aop-param</module>
+    <module>spring-security-filter</module>
   </modules>
 </project>
