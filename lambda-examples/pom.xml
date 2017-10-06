@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.basaki</groupId>
+        <artifactId>stackoverflow-indra</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <groupId>com.basaki</groupId>
+    <artifactId>lambda-examples</artifactId>
+    <version>1.0.0</version>
+    <name>lambda-examples</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <aspect.version>1.8.10</aspect.version>
+        <jackson.version>2.8.8</jackson.version>
+        <java.version>1.8</java.version>
+        <junit.version>4.12</junit.version>
+        <lombok.version>1.16.16</lombok.version>
+        <spring.boot.version>1.5.3.RELEASE</spring.boot.version>
+        <swagger.version>2.6.1</swagger.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
