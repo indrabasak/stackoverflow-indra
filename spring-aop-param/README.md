@@ -8,3 +8,5 @@ Spring AOP Examples
 - `LogArgumentsAspect.java` has the solution related to stackoverflow question on [Spring AOP Custom annotation not firing for my controller](https://stackoverflow.com/questions/46693030/spring-aop-custom-annotation-not-firing-for-my-controller/46701714#46701714)
 
 - `LoggerAspect.java` has the solution related to stackoverflow question on [Creating library using Spring boot and aspectj](https://stackoverflow.com/questions/46223181/creating-library-using-spring-boot-and-aspectj/46702093#46702093)
+
+- `HelloAspect.java` has the solution related to stackoverflow question on [Spring AOP pointcut by declared return type](https://stackoverflow.com/questions/43754433/spring-aop-pointcut-by-declared-return-type)

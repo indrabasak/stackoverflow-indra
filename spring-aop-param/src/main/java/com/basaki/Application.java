@@ -1,5 +1,6 @@
 package com.basaki;
 
+import com.basaki.service.Hello;
 import com.basaki.service.SayHelloService;
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class Application {
     @Autowired
     private SayHelloService service;
 
+    @Autowired
+    private Hello hello;
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -38,5 +42,7 @@ public class Application {
     public void init() {
         service.message("test");
         service.justAnotherStaticMethod();
+        hello.getGreetingA();
+        hello.getGreetingB();
     }
 }
