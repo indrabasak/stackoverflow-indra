@@ -12,5 +12,6 @@
     <module>spring-aop-param</module>
     <module>spring-security-filter</module>
     <module>lambda-examples</module>
+    <module>spring-test-examples</module>
   </modules>
 </project>

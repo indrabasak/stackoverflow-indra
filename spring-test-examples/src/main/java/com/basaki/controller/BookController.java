@@ -1,12 +1,8 @@
 package com.basaki.controller;
 
-import com.basaki.annotation.EnableHttpLogging;
-import com.basaki.annotation.Key;
-import com.basaki.annotation.LogArguments;
-import com.basaki.annotation.Wrappable;
 import com.basaki.model.Book;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.Api;
+//import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,21 +19,18 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Slf4j
-@Api(value = "Book API",
-        description = "Book API",
-        produces = "application/json", tags = {"API"})
+//@Api(value = "Book API",
+//        description = "Book API",
+//        produces = "application/json", tags = {"API"})
 public class BookController {
 
-    @ApiOperation(
-            value = "Retrieves a book.",
-            notes = "Requires book identifier",
-            response = Book.class)
+//    @ApiOperation(
+//            value = "Retrieves a book.",
+//            notes = "Requires book identifier",
+//            response = Book.class)
     @RequestMapping(method = RequestMethod.GET, produces = {
             MediaType.APPLICATION_JSON_VALUE}, value = "/books/{id}")
-    @Wrappable
-    @LogArguments
-    @EnableHttpLogging
-    public Book read(@Key @PathVariable("id") Integer id) {
+    public Book read(@PathVariable("id") Integer id) {
         Book book = new Book();
         book.setId(id);
         book.setTitle(
@@ -45,5 +38,14 @@ public class BookController {
         book.setAuthor("Gino Segrè and Bettina Hoerlin");
 
         return book;
+    }
+
+//    @ApiOperation(
+//            value = "Ping",
+//            response = String.class)
+    @RequestMapping(method = RequestMethod.GET, value = "/ping")
+    public String ping() {
+
+        return "pong";
     }
 }

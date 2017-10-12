@@ -7,6 +7,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -24,12 +25,14 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
+@Slf4j
 public class WrappableAspect {
 
     @After("@annotation(annotation) || @within(annotation)")
     public void wrapper(
             final JoinPoint pointcut,
             final Wrappable annotation) {
+        log.info("Inside WrappableAspect.wrapper()");
         Wrappable anno = annotation;
         List<Parameter> keyParams = new ArrayList<>();
 
