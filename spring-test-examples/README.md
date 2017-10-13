@@ -1,3 +1,4 @@
 Spring Test Examples
 ========================
-This is an example related to stackoverflow question on [Spring Custom Security Filter](https://stackoverflow.com/questions/46595911/spring-custom-filter-is-always-invoked/46599116#46599116)
+
+- `CustomEnvironmentPostProcessor.java` is an example related to stackoverflow question on [Update the application property in Java](https://stackoverflow.com/questions/46736711/update-the-application-property-in-java)

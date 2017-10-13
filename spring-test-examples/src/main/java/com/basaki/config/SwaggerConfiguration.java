@@ -1,20 +1,14 @@
 package com.basaki.config;
 
-import com.basaki.model.Book;
-import com.mangofactory.swagger.configuration.SpringSwaggerConfig;
-import com.mangofactory.swagger.models.dto.ApiInfo;
-import com.mangofactory.swagger.plugin.EnableSwagger;
-import com.mangofactory.swagger.plugin.SwaggerSpringMvcPlugin;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-/*import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;*/
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * {@code SwaggerConfiguration} is the configuration for setting up swagger for
@@ -26,11 +20,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;*/
  * @since 10/4/17
  */
 @Configuration
-@EnableSwagger
-//@EnableSwagger2
+//@EnableSwagger
+@EnableSwagger2
 public class SwaggerConfiguration {
 
-    @Autowired
+/*    @Autowired
     private SpringSwaggerConfig springSwaggerConfig;
 
 
@@ -44,14 +38,14 @@ public class SwaggerConfiguration {
                 //.apiVersion("1.0")
                 //.includePatterns("/com/basaki/controller/.*");
                 //.includePatterns(".*basaki.controller.*");
-    }
+    }*/
 
     /**
      * Creates the Swagger configuration bean.
      *
      * @return docket bean
      */
-/*    @Bean
+    @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("book")
@@ -61,7 +55,7 @@ public class SwaggerConfiguration {
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo("Book API", "Book Service API"));
-    }*/
+    }
 
     /**
      * Creates an object containing API information including author name,
@@ -71,13 +65,14 @@ public class SwaggerConfiguration {
      * @param description API description
      * @return API information
      */
-/*    private ApiInfo apiInfo(String title, String description) {
+    private ApiInfo apiInfo(String title, String description) {
         Contact contact = new Contact("Indra Basak", "",
                 "developer@gmail.com");
         return new ApiInfo(title, description, "1.0", "terms of controller url",
                 contact, "license", "license url");
-    }*/
-    private ApiInfo apiInfo(String title, String description) {
+    }
+
+/*    private ApiInfo apiInfo(String title, String description) {
         ApiInfo apiInfo = new ApiInfo(
                 title,
                 description,
@@ -86,5 +81,5 @@ public class SwaggerConfiguration {
                 "license",
                 "license url");
         return apiInfo;
-    }
+    }*/
 }

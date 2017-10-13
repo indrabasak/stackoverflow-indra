@@ -28,3 +28,7 @@ management:
     enabled: true
 #    roles: ACTUATOR
 #    roles: SUPERUSER
+
+spring:
+  datasource:
+    url: jdbc:jtds:sqlserver://%%mysystemName%%/;instance=mydb;domain=DHC;trusted=true;
