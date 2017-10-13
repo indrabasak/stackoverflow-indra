@@ -44,18 +44,15 @@ public class CustomEnvironmentPostProcessor implements EnvironmentPostProcessor 
                     Object value = target.getProperty(name);
                     if (value instanceof String) {
                         if (((String) value).contains(SYSTEM_PATTERN)) {
-                            String newValue =
-                                    null;
                             try {
-                                newValue = ((String) value).replaceAll(SYSTEM_PATTERN,
+                                String newValue = ((String) value).replaceAll(
+                                        SYSTEM_PATTERN,
                                         hostname());
                                 modifiedProps.put(name, newValue);
                             } catch (UnknownHostException e) {
                                 e.printStackTrace();
                             }
-
                         }
-
                     }
                 }
             }
