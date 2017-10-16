@@ -1,6 +1,9 @@
 # use a random unassigned HTTP port by scanning for free port
 server:
   port: 8080
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plai
 
 
 # For Spring Actuator /info endpoint

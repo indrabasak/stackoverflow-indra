@@ -1,0 +1,22 @@
+info:
+  artifact: actuator-security
+  name: Actuator Security
+  description: Spring Actuator Security Example
+  version: 1.0.0
+
+security:
+  user:
+    name: admin
+    password: admin
+    role: TEST
+  basic:
+    enabled: true
+
+management:
+  security:
+    enabled: true
+    roles: HELLO
+
+#endpoints:
+#  info:
+#    sensitive: true

@@ -13,5 +13,7 @@
     <module>spring-security-filter</module>
     <module>lambda-examples</module>
     <module>spring-test-examples</module>
+    <module>spring-actuator-security</module>
+    <module>miscellaneous-examples</module>
   </modules>
 </project>
