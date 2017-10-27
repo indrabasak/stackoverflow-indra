@@ -1,4 +1,4 @@
-package com.basaki.misc;
+package com.basaki.misc.mbean;
 
 
 import java.lang.management.ManagementFactory;
