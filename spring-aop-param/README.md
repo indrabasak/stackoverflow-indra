@@ -10,3 +10,7 @@ Spring AOP Examples
 - `LoggerAspect.java` has the solution related to stackoverflow question on [Creating library using Spring boot and aspectj](https://stackoverflow.com/questions/46223181/creating-library-using-spring-boot-and-aspectj/46702093#46702093)
 
 - `HelloAspect.java` has the solution related to stackoverflow question on [Spring AOP pointcut by declared return type](https://stackoverflow.com/questions/43754433/spring-aop-pointcut-by-declared-return-type)
+
+- `Application.java` has the solution related to stackoverflow question on [Looking for a way to parse values in springboot application.yml file before SpringBootApplication is initialized](https://stackoverflow.com/questions/46937522/looking-for-a-way-to-parse-values-in-springboot-application-yml-file-before-spri/46939278#46939278)
+
+- `SecurityAspect.java` has the solution related to stackoverflow question on [How to print some logs “before” a spring-data repository method, without custom repo](https://stackoverflow.com/questions/46997261/how-to-print-some-logs-before-a-spring-data-repository-method-without-custom)
