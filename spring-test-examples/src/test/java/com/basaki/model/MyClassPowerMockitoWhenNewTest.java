@@ -15,7 +15,7 @@ import static org.powermock.api.mockito.PowerMockito.mockStatic;
 @PrepareForTest({MyClass.class, LearnerFactory.class})
 public class MyClassPowerMockitoWhenNewTest {
 
-    //@Test
+    @Test
     public void test() throws Exception {
         StaticLearner mockLearner = PowerMockito.mock(StaticLearner.class);
         when(mockLearner.doSomething(anyString())).thenReturn("dummy");

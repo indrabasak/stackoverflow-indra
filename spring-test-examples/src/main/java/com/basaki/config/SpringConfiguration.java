@@ -1,5 +1,10 @@
 package com.basaki.config;
 
+import com.basaki.mapper.BookDeserializer;
+import com.basaki.mapper.LanguageDeserializer;
+import com.basaki.model.Book;
+import com.basaki.model.Language;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver;
 
@@ -48,19 +54,27 @@ public class SpringConfiguration {
         return resolver;
     }
 
-    /**
-     * Creates a message converter bean for reading and writing JSON.
-     *
-     * @return aJSON message converter bean
-     */
+//    @Bean
+//    public Jackson2ObjectMapperBuilder objectMapperBuilder(
+//            LanguageDeserializer deserializer) {
+//        Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
+//
+//        SimpleModule module = new SimpleModule();
+//        module.addDeserializer(Language.class, deserializer);
+//        builder.modules(module);
+//
+//        return builder;
+//    }
+
     @Bean
-    public MappingJackson2HttpMessageConverter getHttpMessageConverter() {
-        MappingJackson2HttpMessageConverter converter =
-                new MappingJackson2HttpMessageConverter();
-        converter.setPrefixJson(false);
-        converter.setSupportedMediaTypes(Arrays.asList(
-                MediaType.APPLICATION_JSON,
-                MediaType.TEXT_PLAIN));
-        return converter;
+    public Jackson2ObjectMapperBuilder objectMapperBuilder(
+            BookDeserializer deserializer) {
+        Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
+
+        SimpleModule module = new SimpleModule();
+        module.addDeserializer(Book.class, deserializer);
+        builder.modules(module);
+
+        return builder;
     }
 }

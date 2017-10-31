@@ -1,5 +1,7 @@
 package com.basaki.model;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
+import com.fasterxml.jackson.annotation.Nulls;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,8 +14,8 @@ import lombok.NoArgsConstructor;
  * @since 10/4/17
  */
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Book {
 
     private Integer id;
@@ -21,4 +23,7 @@ public class Book {
     private String title;
 
     private String author;
+
+    @JsonSetter(nulls= Nulls.AS_EMPTY)
+    private Language language;
 }
