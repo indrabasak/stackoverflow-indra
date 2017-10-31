@@ -28,7 +28,7 @@ import org.yaml.snakeyaml.Yaml;
  */
 @SpringBootApplication
 @EnableAspectJAutoProxy
-@EnableOAuth2Sso
+//@EnableOAuth2Sso
 @ComponentScan(basePackages = {"com.basaki"})
 @Component
 public class Application {

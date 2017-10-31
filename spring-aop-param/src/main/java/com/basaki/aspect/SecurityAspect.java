@@ -27,8 +27,8 @@ import org.springframework.stereotype.Component;
 @Log
 public class SecurityAspect {
 
-    @Autowired
-    private OAuth2ClientContext oauth2ClientContext;
+    //@Autowired
+    //private OAuth2ClientContext oauth2ClientContext;
 
     @Pointcut("execution(public * com.basaki.data.repository.PersonRepository.*(..))")
     public void pointcut() {
@@ -41,7 +41,7 @@ public class SecurityAspect {
                         + pjp.getSignature().getDeclaringTypeName()
                         + " - method: " + pjp.getSignature().getName());
 
-        OAuth2AccessToken accessToken = oauth2ClientContext.getAccessToken();
+/*        OAuth2AccessToken accessToken = oauth2ClientContext.getAccessToken();
         log.info("AccessToken:: " + accessToken);
 
         if (SecurityContextHolder.getContext().getAuthentication()
@@ -57,7 +57,7 @@ public class SecurityAspect {
                     log.info("Principal Name: " + details.get("name"));
                 }
             }
-        }
+        }*/
 
         return pjp.proceed();
     }
