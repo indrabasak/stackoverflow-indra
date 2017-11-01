@@ -1,9 +1,12 @@
 package com.basaki.config;
 
-import com.basaki.mapper.BookDeserializer;
-import com.basaki.mapper.LanguageDeserializer;
+import com.basaki.mapper.BookDelegateDeserializer;
 import com.basaki.model.Book;
-import com.basaki.model.Language;
+import com.basaki.service.LanguageService;
+import com.fasterxml.jackson.databind.BeanDescription;
+import com.fasterxml.jackson.databind.DeserializationConfig;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.deser.BeanDeserializerModifier;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,25 +57,49 @@ public class SpringConfiguration {
         return resolver;
     }
 
-//    @Bean
-//    public Jackson2ObjectMapperBuilder objectMapperBuilder(
-//            LanguageDeserializer deserializer) {
-//        Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
-//
-//        SimpleModule module = new SimpleModule();
-//        module.addDeserializer(Language.class, deserializer);
-//        builder.modules(module);
-//
-//        return builder;
-//    }
+    //    @Bean
+    //    public Jackson2ObjectMapperBuilder objectMapperBuilder(
+    //            LanguageDeserializer deserializer) {
+    //        Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
+    //
+    //        SimpleModule module = new SimpleModule();
+    //        module.addDeserializer(Language.class, deserializer);
+    //        builder.modules(module);
+    //
+    //        return builder;
+    //    }
+
+    //    @Bean
+    //    public Jackson2ObjectMapperBuilder objectMapperBuilder(
+    //            BookDeserializer deserializer) {
+    //        Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
+    //
+    //        SimpleModule module = new SimpleModule();
+    //        module.addDeserializer(Book.class, deserializer);
+    //        builder.modules(module);
+    //
+    //        return builder;
+    //    }
 
     @Bean
     public Jackson2ObjectMapperBuilder objectMapperBuilder(
-            BookDeserializer deserializer) {
+            final LanguageService service) {
         Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
 
         SimpleModule module = new SimpleModule();
-        module.addDeserializer(Book.class, deserializer);
+        module.setDeserializerModifier(new BeanDeserializerModifier() {
+            @Override
+            public JsonDeserializer<?> modifyDeserializer(
+                    DeserializationConfig config, BeanDescription beanDesc,
+                    JsonDeserializer<?> deserializer) {
+                if (beanDesc.getBeanClass() == Book.class) {
+                    return new BookDelegateDeserializer(deserializer, service);
+                }
+
+                return deserializer;
+            }
+        });
+
         builder.modules(module);
 
         return builder;
