@@ -5,9 +5,11 @@ import com.basaki.annotation.Key;
 import com.basaki.annotation.LogArguments;
 import com.basaki.annotation.Wrappable;
 import com.basaki.model.Book;
+import com.basaki.model.MyClass;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,6 +31,9 @@ import org.springframework.web.bind.annotation.RestController;
         produces = "application/json", tags = {"API"})
 public class BookController {
 
+    @Autowired
+    private MyClass myClass;
+
     @ApiOperation(
             value = "Creates a book.",
             response = Book.class)
@@ -47,6 +52,7 @@ public class BookController {
     @LogArguments
     @EnableHttpLogging
     public Book read(@Key @PathVariable("id") Integer id) {
+        myClass.myMethod("hello");
         Book book = new Book();
         book.setId(id);
         book.setTitle(
