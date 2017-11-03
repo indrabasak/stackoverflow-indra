@@ -15,6 +15,7 @@ import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
 import org.yaml.snakeyaml.Yaml;
 
@@ -28,6 +29,7 @@ import org.yaml.snakeyaml.Yaml;
  */
 @SpringBootApplication
 @EnableAspectJAutoProxy
+@EnableScheduling
 //@EnableOAuth2Sso
 @ComponentScan(basePackages = {"com.basaki"})
 @Component
