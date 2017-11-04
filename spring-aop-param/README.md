@@ -17,4 +17,4 @@ Spring AOP Examples
 
 -`MethodArgValueAspect.java` has the solution related to stackoverflow question on [How to get method argument value in joinpoint.getArgs()?](https://stackoverflow.com/questions/47028651/how-to-get-method-argument-value-in-joinpoint-getargs/47041477#47041477)
 
--`MethodArgValueAspect.java` has the solution related to stackoverflow question on [Aspect does not capture method from Scheduled](https://stackoverflow.com/questions/47072554/aspect-does-not-capture-method-from-scheduled/47104087#47104087)
+-`MyAspect.java` has the solution related to stackoverflow question on [Aspect does not capture method from Scheduled](https://stackoverflow.com/questions/47072554/aspect-does-not-capture-method-from-scheduled/47104087#47104087)
