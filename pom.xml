@@ -15,5 +15,6 @@
     <module>spring-test-examples</module>
     <module>spring-actuator-security</module>
     <module>miscellaneous-examples</module>
+    <module>spring-aspectj-example</module>
   </modules>
 </project>
