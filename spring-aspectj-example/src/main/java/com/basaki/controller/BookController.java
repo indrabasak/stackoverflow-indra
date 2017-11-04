@@ -3,7 +3,6 @@ package com.basaki.controller;
 import com.basaki.model.Book;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 10/4/17
  */
 @RestController
-@Slf4j
 @Api(value = "Book API",
         description = "Book API",
         produces = "application/json", tags = {"API"})
