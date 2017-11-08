@@ -21,6 +21,7 @@
         <java.version>1.8</java.version>
         <junit.version>4.12</junit.version>
         <lombok.version>1.16.16</lombok.version>
+        <mockito.version>1.10.19</mockito.version>
         <spring.boot.version>1.5.8.RELEASE</spring.boot.version>
         <spring.version>5.0.1.RELEASE</spring.version>
         <swagger.version>2.6.1</swagger.version>
@@ -119,6 +120,18 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
@@ -159,7 +172,7 @@
                     <execution>
                         <goals>
                             <goal>compile</goal>
-                            <!--<goal>test-compile</goal>-->
+                            <goal>test-compile</goal>
                         </goals>
                     </execution>
                 </executions>
