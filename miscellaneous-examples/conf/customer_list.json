@@ -1,0 +1,8 @@
+{
+  "name":"John",
+  "age":30,
+  "customers": [
+    { "fistname":"James", "lastname":"Bond" },
+    { "fistname":"Jane", "lastname":"Doe" }
+  ]
+}
