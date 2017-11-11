@@ -3,6 +3,7 @@ package com.basaki.controller;
 import com.basaki.annotation.EnableHttpLogging;
 import com.basaki.annotation.Key;
 import com.basaki.annotation.LogArguments;
+import com.basaki.annotation.NewLogArguments;
 import com.basaki.annotation.Wrappable;
 import com.basaki.model.Book;
 import com.basaki.model.MyClass;
@@ -37,6 +38,7 @@ public class BookController {
     @ApiOperation(
             value = "Creates a book.",
             response = Book.class)
+    @NewLogArguments
     @RequestMapping(method = RequestMethod.POST, value = "/books")
     public Book create(@RequestBody Book book) {
         return book;

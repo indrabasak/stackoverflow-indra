@@ -15,6 +15,8 @@ Spring AOP Examples
 
 - `SecurityAspect.java` has the solution related to stackoverflow question on [How to print some logs “before” a spring-data repository method, without custom repo](https://stackoverflow.com/questions/46997261/how-to-print-some-logs-before-a-spring-data-repository-method-without-custom)
 
--`MethodArgValueAspect.java` has the solution related to stackoverflow question on [How to get method argument value in joinpoint.getArgs()?](https://stackoverflow.com/questions/47028651/how-to-get-method-argument-value-in-joinpoint-getargs/47041477#47041477)
+- `MethodArgValueAspect.java` has the solution related to stackoverflow question on [How to get method argument value in joinpoint.getArgs()?](https://stackoverflow.com/questions/47028651/how-to-get-method-argument-value-in-joinpoint-getargs/47041477#47041477)
 
--`MyAspect.java` has the solution related to stackoverflow question on [Aspect does not capture method from Scheduled](https://stackoverflow.com/questions/47072554/aspect-does-not-capture-method-from-scheduled/47104087#47104087)
+- `MyAspect.java` has the solution related to stackoverflow question on [Aspect does not capture method from Scheduled](https://stackoverflow.com/questions/47072554/aspect-does-not-capture-method-from-scheduled/47104087#47104087)
+
+- `ExampleAspectTest` has the solution related to stackoverflow question on [How to mock AspectJ class?](https://stackoverflow.com/questions/47213904/how-to-mock-aspectj-class/47217114#47217114)
