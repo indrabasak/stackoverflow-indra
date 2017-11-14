@@ -20,3 +20,5 @@ Spring AOP Examples
 - `MyAspect.java` has the solution related to stackoverflow question on [Aspect does not capture method from Scheduled](https://stackoverflow.com/questions/47072554/aspect-does-not-capture-method-from-scheduled/47104087#47104087)
 
 - `ExampleAspectTest` has the solution related to stackoverflow question on [How to mock AspectJ class?](https://stackoverflow.com/questions/47213904/how-to-mock-aspectj-class/47217114#47217114)
+
+- `ParamAspect.java` has the solution related to stackoverflow question on [AspecJ - pointcut to match a method that has generic parameters](https://stackoverflow.com/questions/47264428/aspecj-pointcut-to-match-a-method-that-has-generic-parameters/47277919#47277919) 
