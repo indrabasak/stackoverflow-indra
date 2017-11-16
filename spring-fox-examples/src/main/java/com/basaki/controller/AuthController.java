@@ -19,9 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Slf4j
-@Api(value = "Auth API",
-        description = "Auth API",
-        produces = "application/json", tags = {"API"})
+@Api(description = "auth-controller",
+        produces = "application/json", tags = {"1"})
 public class AuthController {
 
 

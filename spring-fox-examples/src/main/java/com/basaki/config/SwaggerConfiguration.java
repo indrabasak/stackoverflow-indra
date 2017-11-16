@@ -36,8 +36,8 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("token")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage(
-                        "com.basaki.controller"))
+//                .apis(RequestHandlerSelectors.basePackage(
+//                        "com.basaki.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo("Token API", "Token Service API"));
