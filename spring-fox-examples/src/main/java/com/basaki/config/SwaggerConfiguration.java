@@ -9,6 +9,7 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.data.rest.configuration.SpringDataRestConfiguration;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -22,7 +23,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @since 11/15/17
  */
 @Configuration
-@Import({BeanValidatorPluginsConfiguration.class})
+@Import({BeanValidatorPluginsConfiguration.class, SpringDataRestConfiguration.class})
 @EnableSwagger2
 public class SwaggerConfiguration {
 
@@ -34,13 +35,13 @@ public class SwaggerConfiguration {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("token")
+                .groupName("book")
                 .select()
 //                .apis(RequestHandlerSelectors.basePackage(
 //                        "com.basaki.controller"))
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(apiInfo("Token API", "Token Service API"));
+                .apiInfo(apiInfo("Example Springfox API", "Example Springfox API"));
     }
 
     /**
