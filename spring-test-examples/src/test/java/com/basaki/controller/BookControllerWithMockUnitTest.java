@@ -1,6 +1,7 @@
-package com.basaki.model;
+package com.basaki.controller;
 
 import com.basaki.controller.BookController;
+import com.basaki.model.Book;
 import com.basaki.service.BookService;
 import org.junit.Before;
 import org.junit.Test;

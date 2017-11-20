@@ -1,6 +1,7 @@
-package com.basaki.model;
+package com.basaki.controller;
 
 import com.basaki.controller.BookController;
+import javax.servlet.Filter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -21,6 +23,9 @@ public class BookerControllerWithWebMvcFunctionalTest {
     @Autowired
     private MockMvc mvc;
 
+    @Autowired
+    private Filter[] filters;
+
     @Test
     public void testRead() throws Exception {
         MvcResult result = mvc.perform(get("/books/1")
@@ -32,5 +37,15 @@ public class BookerControllerWithWebMvcFunctionalTest {
 
         String content = result.getResponse().getContentAsString();
         System.out.println(content);
+    }
+
+    @Test
+    public void testMapping() {
+        for (Filter filter : filters) {
+            System.out.println("******************* " + filter);
+
+
+        }
+
     }
 }
