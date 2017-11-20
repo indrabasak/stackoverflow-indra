@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Indra Basak
  * @since 11/20/17
  */
-@RestController
+//@RestController
 @Slf4j
 @Api(description = "Book Service",
         produces = "application/json", tags = {"3"})

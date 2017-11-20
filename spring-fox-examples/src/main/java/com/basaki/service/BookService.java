@@ -28,7 +28,6 @@ public class BookService {
     @Transactional
     public Book create(BookRequest request) {
         Book entity = new Book();
-        entity.setId(UUID.randomUUID());
         entity.setTitle(request.getTitle());
         entity.setAuthor(request.getAuthor());
 
