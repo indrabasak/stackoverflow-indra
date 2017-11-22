@@ -78,7 +78,7 @@ public class SwaggerConfiguration {
         };
     }
 
-    public static Predicate<String> matchPathRegex(final String... pathRegexs) {
+    private static Predicate<String> matchPathRegex(final String... pathRegexs) {
         return new Predicate<String>() {
             @Override
             public boolean apply(String input) {
