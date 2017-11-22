@@ -1,12 +1,13 @@
 package com.basaki.config;
 
+import com.google.common.base.Predicate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
+import springfox.documentation.RequestHandler;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.data.rest.configuration.SpringDataRestConfiguration;
@@ -37,11 +38,14 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("book")
                 .select()
-//                .apis(RequestHandlerSelectors.basePackage(
-//                        "com.basaki.controller"))
+                //                .apis(RequestHandlerSelectors.basePackage(
+                //                        "com.basaki.controller"))
+//                .apis(exactPackages("com.basaki.controller", "com.basaki.model",
+                //                        "com.basaki.data.repository"))
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(apiInfo("Example Springfox API", "Example Springfox API"));
+                .apiInfo(apiInfo("Example Springfox API",
+                        "Example Springfox API"));
     }
 
     /**
@@ -57,5 +61,18 @@ public class SwaggerConfiguration {
                 .title(title)
                 .description(description)
                 .build();
+    }
+
+    private static Predicate<RequestHandler> exactPackages(
+            final String... pkgs) {
+        return input -> {
+            String currentPkg = input.declaringClass().getPackage().getName();
+            for (String pkg : pkgs) {
+                if (pkg.equals(currentPkg)) {
+                    return true;
+                }
+            }
+            return false;
+        };
     }
 }
