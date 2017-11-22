@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Indra Basak
  * @since 11/20/17
  */
-//@RestController
+@RestController
 @Slf4j
 @Api(description = "Book Service",
         produces = "application/json", tags = {"3"})
@@ -36,7 +36,7 @@ public class BookController {
     }
 
     @ApiOperation(value = "Creates a book.", response = Book.class)
-    @RequestMapping(method = RequestMethod.POST, value = "/books")
+    @RequestMapping(method = RequestMethod.POST, value = "/booxs")
     public Book create(@RequestBody BookRequest request) {
         return service.create(request);
     }
@@ -44,7 +44,7 @@ public class BookController {
     @ApiOperation(value = "Retrieves a book.", notes = "Requires book identifier",
             response = Book.class)
     @RequestMapping(method = RequestMethod.GET, produces = {
-            MediaType.APPLICATION_JSON_VALUE}, value = "/books/{id}")
+            MediaType.APPLICATION_JSON_VALUE}, value = "/booxs/{id}")
     public Book read(@PathVariable("id") UUID id) {
         return service.read(id);
     }

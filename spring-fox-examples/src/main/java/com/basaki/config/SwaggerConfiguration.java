@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Import;
 import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
 import springfox.documentation.RequestHandler;
 import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.data.rest.configuration.SpringDataRestConfiguration;
@@ -40,9 +39,12 @@ public class SwaggerConfiguration {
                 .select()
                 //                .apis(RequestHandlerSelectors.basePackage(
                 //                        "com.basaki.controller"))
-//                .apis(exactPackages("com.basaki.controller", "com.basaki.model",
+                //                .apis(exactPackages("com.basaki.controller", "com.basaki.model",
                 //                        "com.basaki.data.repository"))
-                .paths(PathSelectors.any())
+                //.paths(PathSelectors.any())
+                .paths(matchPathRegex("/books(/|$).*",
+                        "/booxs(/|$).*", "/tokens(/|$).*",
+                        "/ping(/|$).*"))
                 .build()
                 .apiInfo(apiInfo("Example Springfox API",
                         "Example Springfox API"));
@@ -73,6 +75,20 @@ public class SwaggerConfiguration {
                 }
             }
             return false;
+        };
+    }
+
+    public static Predicate<String> matchPathRegex(final String... pathRegexs) {
+        return new Predicate<String>() {
+            @Override
+            public boolean apply(String input) {
+                for (String pathRegex : pathRegexs) {
+                    if (input.matches(pathRegex)) {
+                        return true;
+                    }
+                }
+                return false;
+            }
         };
     }
 }
