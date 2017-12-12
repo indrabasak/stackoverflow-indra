@@ -37,8 +37,7 @@ public class LoadingBookFromBinaryArrayTest {
         System.out.println(clazz);
     }
 
-    //@Test(expected = ClassFormatError.class)
-    @Test
+    @Test(expected = ClassFormatError.class)
     public void testLoadingClassWithIncorrectCorrectMagicNumber() throws IllegalAccessException, InstantiationException, DecoderException {
         byte[] bytes = java.util.Base64.getUrlDecoder().decode(BOOK_CLAZZ);
 
