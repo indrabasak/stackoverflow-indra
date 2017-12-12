@@ -1,0 +1,35 @@
+{
+  "groups": [
+    {
+      "deprecated": true,
+      "name": "spring.git.properties",
+      "description": "Resource reference to a generated git info properties file.",
+      "type": "java.lang.String",
+      "deprecation": {
+        "replacement": "spring.info.git.location"
+      }
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint",
+      "defaultValue": [
+        "password",
+        "secret",
+        "key",
+        "token",
+        ".*credentials.*",
+        "vcap_services"
+      ],
+      "name": "endpoints.configprops.keys-to-sanitize",
+      "description": "Keys that should be sanitized. Keys can be simple strings that the property ends with or regex expressions.",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.EnvironmentEndpoint",
+      "name": "endpoints.env.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    }
+  ]
+}

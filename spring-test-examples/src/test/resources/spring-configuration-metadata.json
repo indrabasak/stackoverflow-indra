@@ -1,0 +1,1553 @@
+{
+  "hints": [
+    {
+      "values": [
+        {
+          "value": "*"
+        }
+      ],
+      "name": "endpoints.cors.allowed-headers",
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "value": "*"
+        }
+      ],
+      "name": "endpoints.cors.allowed-methods",
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "value": "*"
+        }
+      ],
+      "name": "endpoints.cors.allowed-origins",
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "value": "UNKNOWN"
+        },
+        {
+          "value": "UP"
+        },
+        {
+          "value": "DOWN"
+        },
+        {
+          "value": "OUT_OF_SERVICE"
+        }
+      ],
+      "name": "management.health.status.order",
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "description": "Use a simple user\/password based authentication.",
+          "value": "simple"
+        },
+        {
+          "description": "Integrate with Spring Security.",
+          "value": "spring"
+        },
+        {
+          "description": "Use a Key-based authentication.",
+          "value": "key"
+        },
+        {
+          "description": "Use JAAS authentication.",
+          "value": "jaas"
+        }
+      ],
+      "name": "management.shell.auth.type"
+    },
+    {
+      "name": "spring.kafka.consumer.key-deserializer",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "org.apache.kafka.common.serialization.Deserializer"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.kafka.consumer.value-deserializer",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "org.apache.kafka.common.serialization.Deserializer"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.kafka.producer.key-serializer",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "org.apache.kafka.common.serialization.Serializer"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring.kafka.producer.value-serializer",
+      "providers": [
+        {
+          "name": "handle-as",
+          "parameters": {
+            "target": "org.apache.kafka.common.serialization.Serializer"
+          }
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.EndpointProperties",
+      "name": "endpoints",
+      "type": "org.springframework.boot.actuate.endpoint.EndpointProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.HalJsonMvcEndpoint",
+      "name": "endpoints.actuator",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.HalJsonMvcEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint",
+      "name": "endpoints.auditevents",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.jmx.AuditEventsJmxEndpoint",
+      "name": "endpoints.auditevents",
+      "type": "org.springframework.boot.actuate.endpoint.jmx.AuditEventsJmxEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint",
+      "name": "endpoints.autoconfig",
+      "type": "org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.BeansEndpoint",
+      "name": "endpoints.beans",
+      "type": "org.springframework.boot.actuate.endpoint.BeansEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint",
+      "name": "endpoints.configprops",
+      "type": "org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties",
+      "name": "endpoints.cors",
+      "type": "org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint",
+      "name": "endpoints.docs",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint",
+      "name": "endpoints.docs.curies",
+      "sourceMethod": "getCuries()",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint$Curies"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.DumpEndpoint",
+      "name": "endpoints.dump",
+      "type": "org.springframework.boot.actuate.endpoint.DumpEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.EnvironmentEndpoint",
+      "name": "endpoints.env",
+      "type": "org.springframework.boot.actuate.endpoint.EnvironmentEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint",
+      "name": "endpoints.env",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.FlywayEndpoint",
+      "name": "endpoints.flyway",
+      "type": "org.springframework.boot.actuate.endpoint.FlywayEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.HealthMvcEndpointProperties",
+      "name": "endpoints.health",
+      "type": "org.springframework.boot.actuate.autoconfigure.HealthMvcEndpointProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint",
+      "name": "endpoints.health",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.HealthEndpoint",
+      "name": "endpoints.health",
+      "type": "org.springframework.boot.actuate.endpoint.HealthEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint",
+      "name": "endpoints.heapdump",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.InfoEndpoint",
+      "name": "endpoints.info",
+      "type": "org.springframework.boot.actuate.endpoint.InfoEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportProperties",
+      "name": "endpoints.jmx",
+      "type": "org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint",
+      "name": "endpoints.jolokia",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.LiquibaseEndpoint",
+      "name": "endpoints.liquibase",
+      "type": "org.springframework.boot.actuate.endpoint.LiquibaseEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint",
+      "name": "endpoints.logfile",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.LoggersEndpoint",
+      "name": "endpoints.loggers",
+      "type": "org.springframework.boot.actuate.endpoint.LoggersEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint",
+      "name": "endpoints.loggers",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.RequestMappingEndpoint",
+      "name": "endpoints.mappings",
+      "type": "org.springframework.boot.actuate.endpoint.RequestMappingEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint",
+      "name": "endpoints.metrics",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.MetricsEndpoint",
+      "name": "endpoints.metrics",
+      "type": "org.springframework.boot.actuate.endpoint.MetricsEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.MetricFilterProperties",
+      "name": "endpoints.metrics.filter",
+      "type": "org.springframework.boot.actuate.autoconfigure.MetricFilterProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.ShutdownEndpoint",
+      "name": "endpoints.shutdown",
+      "type": "org.springframework.boot.actuate.endpoint.ShutdownEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpoint",
+      "name": "endpoints.shutdown",
+      "type": "org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.TraceEndpoint",
+      "name": "endpoints.trace",
+      "type": "org.springframework.boot.actuate.endpoint.TraceEndpoint"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.JolokiaProperties",
+      "name": "jolokia",
+      "type": "org.springframework.boot.actuate.autoconfigure.JolokiaProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties",
+      "name": "management",
+      "type": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.health.DiskSpaceHealthIndicatorProperties",
+      "name": "management.health.diskspace",
+      "type": "org.springframework.boot.actuate.health.DiskSpaceHealthIndicatorProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.health.ElasticsearchHealthIndicatorProperties",
+      "name": "management.health.elasticsearch",
+      "type": "org.springframework.boot.actuate.health.ElasticsearchHealthIndicatorProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.HealthIndicatorProperties",
+      "name": "management.health.status",
+      "type": "org.springframework.boot.actuate.autoconfigure.HealthIndicatorProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.InfoContributorProperties",
+      "name": "management.info",
+      "type": "org.springframework.boot.actuate.autoconfigure.InfoContributorProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.InfoContributorProperties",
+      "name": "management.info.git",
+      "sourceMethod": "getGit()",
+      "type": "org.springframework.boot.actuate.autoconfigure.InfoContributorProperties$Git"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties",
+      "name": "management.security",
+      "sourceMethod": "getSecurity()",
+      "type": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties$Security"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties",
+      "name": "management.shell",
+      "type": "org.springframework.boot.actuate.autoconfigure.ShellProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties",
+      "name": "management.shell.auth",
+      "sourceMethod": "getAuth()",
+      "type": "org.springframework.boot.actuate.autoconfigure.ShellProperties$Auth"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$JaasAuthenticationProperties",
+      "name": "management.shell.auth.jaas",
+      "type": "org.springframework.boot.actuate.autoconfigure.ShellProperties$JaasAuthenticationProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$KeyAuthenticationProperties",
+      "name": "management.shell.auth.key",
+      "type": "org.springframework.boot.actuate.autoconfigure.ShellProperties$KeyAuthenticationProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$SimpleAuthenticationProperties",
+      "name": "management.shell.auth.simple",
+      "type": "org.springframework.boot.actuate.autoconfigure.ShellProperties$SimpleAuthenticationProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$SimpleAuthenticationProperties",
+      "name": "management.shell.auth.simple.user",
+      "sourceMethod": "getUser()",
+      "type": "org.springframework.boot.actuate.autoconfigure.ShellProperties$SimpleAuthenticationProperties$User"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$SpringAuthenticationProperties",
+      "name": "management.shell.auth.spring",
+      "type": "org.springframework.boot.actuate.autoconfigure.ShellProperties$SpringAuthenticationProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties",
+      "name": "management.shell.ssh",
+      "sourceMethod": "getSsh()",
+      "type": "org.springframework.boot.actuate.autoconfigure.ShellProperties$Ssh"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties",
+      "name": "management.shell.telnet",
+      "sourceMethod": "getTelnet()",
+      "type": "org.springframework.boot.actuate.autoconfigure.ShellProperties$Telnet"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties",
+      "name": "management.ssl",
+      "sourceMethod": "getSsl()",
+      "type": "org.springframework.boot.context.embedded.Ssl"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.trace.TraceProperties",
+      "name": "management.trace",
+      "type": "org.springframework.boot.actuate.trace.TraceProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties",
+      "name": "spring.metrics.export",
+      "type": "org.springframework.boot.actuate.metrics.export.MetricExportProperties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties",
+      "name": "spring.metrics.export.aggregate",
+      "sourceMethod": "getAggregate()",
+      "type": "org.springframework.boot.actuate.metrics.export.MetricExportProperties$Aggregate"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties",
+      "name": "spring.metrics.export.redis",
+      "sourceMethod": "getRedis()",
+      "type": "org.springframework.boot.actuate.metrics.export.MetricExportProperties$Redis"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties",
+      "name": "spring.metrics.export.statsd",
+      "sourceMethod": "getStatsd()",
+      "type": "org.springframework.boot.actuate.metrics.export.MetricExportProperties$Statsd"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.HalJsonMvcEndpoint",
+      "name": "endpoints.actuator.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.HalJsonMvcEndpoint",
+      "name": "endpoints.actuator.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.HalJsonMvcEndpoint",
+      "name": "endpoints.actuator.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint",
+      "name": "endpoints.auditevents.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.jmx.AuditEventsJmxEndpoint",
+      "name": "endpoints.auditevents.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint",
+      "name": "endpoints.auditevents.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint",
+      "name": "endpoints.auditevents.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint",
+      "name": "endpoints.autoconfig.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint",
+      "name": "endpoints.autoconfig.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "endpoints.autoconfig.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint",
+      "name": "endpoints.autoconfig.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.BeansEndpoint",
+      "name": "endpoints.beans.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.BeansEndpoint",
+      "name": "endpoints.beans.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "endpoints.beans.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.BeansEndpoint",
+      "name": "endpoints.beans.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint",
+      "name": "endpoints.configprops.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint",
+      "name": "endpoints.configprops.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint",
+      "defaultValue": [
+        "password",
+        "secret",
+        "key",
+        "token",
+        ".*credentials.*",
+        "vcap_services"
+      ],
+      "name": "endpoints.configprops.keys-to-sanitize",
+      "description": "Keys that should be sanitized. Keys can be simple strings that the property ends with or regex expressions.",
+      "type": "java.lang.String[]"
+    },
+    {
+      "name": "endpoints.configprops.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint",
+      "name": "endpoints.configprops.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties",
+      "name": "endpoints.cors.allow-credentials",
+      "description": "Set whether credentials are supported. When not set, credentials are not supported.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties",
+      "name": "endpoints.cors.allowed-headers",
+      "description": "Comma-separated list of headers to allow in a request. '*' allows all headers.",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties",
+      "name": "endpoints.cors.allowed-methods",
+      "description": "Comma-separated list of methods to allow. '*' allows all methods. When not set,\n defaults to GET.",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties",
+      "name": "endpoints.cors.allowed-origins",
+      "description": "Comma-separated list of origins to allow. '*' allows all origins. When not set,\n CORS support is disabled.",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties",
+      "name": "endpoints.cors.exposed-headers",
+      "description": "Comma-separated list of headers to include in a response.",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties",
+      "defaultValue": 1800,
+      "name": "endpoints.cors.max-age",
+      "description": "How long, in seconds, the response from a pre-flight request can be cached by\n clients.",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint$Curies",
+      "defaultValue": false,
+      "name": "endpoints.docs.curies.enabled",
+      "description": "Enable the curie generation.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint",
+      "name": "endpoints.docs.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint",
+      "name": "endpoints.docs.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint",
+      "name": "endpoints.docs.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.DumpEndpoint",
+      "name": "endpoints.dump.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.DumpEndpoint",
+      "name": "endpoints.dump.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "endpoints.dump.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.DumpEndpoint",
+      "name": "endpoints.dump.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.EndpointProperties",
+      "defaultValue": true,
+      "name": "endpoints.enabled",
+      "description": "Enable endpoints.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.EnvironmentEndpoint",
+      "name": "endpoints.env.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.EnvironmentEndpoint",
+      "name": "endpoints.env.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.EnvironmentEndpoint",
+      "defaultValue": [
+        "password",
+        "secret",
+        "key",
+        "token",
+        ".*credentials.*",
+        "vcap_services"
+      ],
+      "name": "endpoints.env.keys-to-sanitize",
+      "description": "Keys that should be sanitized. Keys can be simple strings that the property ends with or regex expressions.",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint",
+      "name": "endpoints.env.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.EnvironmentEndpoint",
+      "name": "endpoints.env.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.FlywayEndpoint",
+      "name": "endpoints.flyway.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.FlywayEndpoint",
+      "name": "endpoints.flyway.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.FlywayEndpoint",
+      "name": "endpoints.flyway.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.HealthEndpoint",
+      "name": "endpoints.health.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.HealthEndpoint",
+      "name": "endpoints.health.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.HealthMvcEndpointProperties",
+      "name": "endpoints.health.mapping",
+      "description": "Mapping of health statuses to HttpStatus codes. By default, registered health\n statuses map to sensible defaults (i.e. UP maps to 200).",
+      "type": "java.util.Map<java.lang.String,org.springframework.http.HttpStatus>"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint",
+      "name": "endpoints.health.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.HealthEndpoint",
+      "name": "endpoints.health.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.HealthEndpoint",
+      "defaultValue": 1000,
+      "name": "endpoints.health.time-to-live",
+      "description": "Time to live for cached result, in milliseconds.",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint",
+      "name": "endpoints.heapdump.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint",
+      "name": "endpoints.heapdump.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint",
+      "name": "endpoints.heapdump.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": false,
+      "name": "endpoints.hypermedia.enabled",
+      "description": "Enable hypermedia support for endpoints.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.InfoEndpoint",
+      "name": "endpoints.info.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.InfoEndpoint",
+      "name": "endpoints.info.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "endpoints.info.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.InfoEndpoint",
+      "name": "endpoints.info.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportProperties",
+      "name": "endpoints.jmx.domain",
+      "description": "JMX domain name. Initialized with the value of 'spring.jmx.default-domain' if set.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportProperties",
+      "defaultValue": true,
+      "name": "endpoints.jmx.enabled",
+      "description": "Enable JMX export of all endpoints.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportProperties",
+      "name": "endpoints.jmx.static-names",
+      "description": "Additional static properties to append to all ObjectNames of MBeans representing\n Endpoints.",
+      "type": "java.util.Properties"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportProperties",
+      "defaultValue": false,
+      "name": "endpoints.jmx.unique-names",
+      "description": "Ensure that ObjectNames are modified in case of conflict.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint",
+      "name": "endpoints.jolokia.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint",
+      "name": "endpoints.jolokia.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint",
+      "name": "endpoints.jolokia.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.LiquibaseEndpoint",
+      "name": "endpoints.liquibase.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.LiquibaseEndpoint",
+      "name": "endpoints.liquibase.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.LiquibaseEndpoint",
+      "name": "endpoints.liquibase.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint",
+      "name": "endpoints.logfile.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint",
+      "name": "endpoints.logfile.external-file",
+      "description": "External Logfile to be accessed. Can be used if the logfile is written by output\n redirect and not by the logging-system itself.",
+      "type": "java.io.File"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint",
+      "name": "endpoints.logfile.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint",
+      "name": "endpoints.logfile.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.LoggersEndpoint",
+      "name": "endpoints.loggers.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.LoggersEndpoint",
+      "name": "endpoints.loggers.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint",
+      "name": "endpoints.loggers.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.LoggersEndpoint",
+      "name": "endpoints.loggers.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.RequestMappingEndpoint",
+      "name": "endpoints.mappings.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.RequestMappingEndpoint",
+      "name": "endpoints.mappings.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "endpoints.mappings.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.RequestMappingEndpoint",
+      "name": "endpoints.mappings.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.MetricsEndpoint",
+      "name": "endpoints.metrics.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.MetricFilterProperties",
+      "name": "endpoints.metrics.filter.counter-submissions",
+      "description": "Submissions that should be made to the counter.",
+      "type": "java.util.Set<org.springframework.boot.actuate.autoconfigure.MetricsFilterSubmission>"
+    },
+    {
+      "defaultValue": true,
+      "name": "endpoints.metrics.filter.enabled",
+      "description": "Enable the metrics servlet filter.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.MetricFilterProperties",
+      "name": "endpoints.metrics.filter.gauge-submissions",
+      "description": "Submissions that should be made to the gauge.",
+      "type": "java.util.Set<org.springframework.boot.actuate.autoconfigure.MetricsFilterSubmission>"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.MetricsEndpoint",
+      "name": "endpoints.metrics.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint",
+      "name": "endpoints.metrics.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.MetricsEndpoint",
+      "name": "endpoints.metrics.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.EndpointProperties",
+      "name": "endpoints.sensitive",
+      "description": "Default endpoint sensitive setting.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.ShutdownEndpoint",
+      "name": "endpoints.shutdown.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.ShutdownEndpoint",
+      "name": "endpoints.shutdown.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpoint",
+      "name": "endpoints.shutdown.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.ShutdownEndpoint",
+      "name": "endpoints.shutdown.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.TraceEndpoint",
+      "name": "endpoints.trace.enabled",
+      "description": "Enable the endpoint.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "endpoints.trace.filter.enabled",
+      "description": "Enable the trace servlet filter.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.TraceEndpoint",
+      "name": "endpoints.trace.id",
+      "description": "Endpoint identifier. With HTTP monitoring the identifier of the endpoint is mapped\n to a URL (e.g. 'foo' is mapped to '\/foo').",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "endpoints.trace.path",
+      "description": "Endpoint URL path.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.endpoint.TraceEndpoint",
+      "name": "endpoints.trace.sensitive",
+      "description": "Mark if the endpoint exposes sensitive information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "name": "info",
+      "description": "Arbitrary properties to add to the info endpoint.",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.JolokiaProperties",
+      "name": "jolokia.config",
+      "description": "Jolokia settings. These are traditionally set using servlet parameters. Refer to\n the documentation of Jolokia for more details.",
+      "type": "java.util.Map<java.lang.String,java.lang.String>"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties",
+      "defaultValue": true,
+      "name": "management.add-application-context-header",
+      "description": "Add the \"X-Application-Context\" HTTP header in each response.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties",
+      "name": "management.address",
+      "description": "Network address that the management endpoints should bind to.",
+      "type": "java.net.InetAddress"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.cloudfoundry.enabled",
+      "description": "Enable extended Cloud Foundry actuator endpoints.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": false,
+      "name": "management.cloudfoundry.skip-ssl-validation",
+      "description": "Skip SSL verification for Cloud Foundry actuator endpoint security calls.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties",
+      "defaultValue": "",
+      "name": "management.context-path",
+      "description": "Management endpoint context-path.",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.cassandra.enabled",
+      "description": "Enable cassandra health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.couchbase.enabled",
+      "description": "Enable couchbase health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.db.enabled",
+      "description": "Enable database health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.defaults.enabled",
+      "description": "Enable default health indicators.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.diskspace.enabled",
+      "description": "Enable disk space health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.health.DiskSpaceHealthIndicatorProperties",
+      "name": "management.health.diskspace.path",
+      "description": "Path used to compute the available disk space.",
+      "type": "java.io.File"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.health.DiskSpaceHealthIndicatorProperties",
+      "defaultValue": 0,
+      "name": "management.health.diskspace.threshold",
+      "description": "Minimum disk space that should be available, in bytes.",
+      "type": "java.lang.Long"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.elasticsearch.enabled",
+      "description": "Enable elasticsearch health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.health.ElasticsearchHealthIndicatorProperties",
+      "name": "management.health.elasticsearch.indices",
+      "description": "Comma-separated index names.",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.health.ElasticsearchHealthIndicatorProperties",
+      "defaultValue": 100,
+      "name": "management.health.elasticsearch.response-timeout",
+      "description": "Time, in milliseconds, to wait for a response from the cluster.",
+      "type": "java.lang.Long"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.jms.enabled",
+      "description": "Enable JMS health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.ldap.enabled",
+      "description": "Enable LDAP health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.mail.enabled",
+      "description": "Enable Mail health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.mongo.enabled",
+      "description": "Enable MongoDB health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.rabbit.enabled",
+      "description": "Enable RabbitMQ health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.redis.enabled",
+      "description": "Enable Redis health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.health.solr.enabled",
+      "description": "Enable Solr health check.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.HealthIndicatorProperties",
+      "name": "management.health.status.order",
+      "description": "Comma-separated list of health statuses in order of severity.",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.info.build.enabled",
+      "description": "Enable build info.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.info.defaults.enabled",
+      "description": "Enable default info contributors.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.info.env.enabled",
+      "description": "Enable environment info.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": true,
+      "name": "management.info.git.enabled",
+      "description": "Enable git info.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.InfoContributorProperties$Git",
+      "defaultValue": "simple",
+      "name": "management.info.git.mode",
+      "description": "Mode to use to expose git information.",
+      "type": "org.springframework.boot.actuate.info.InfoPropertiesInfoContributor$Mode"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties",
+      "name": "management.port",
+      "description": "Management endpoint HTTP port. Use the same port as the application by default.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties$Security",
+      "defaultValue": true,
+      "name": "management.security.enabled",
+      "description": "Enable security.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties$Security",
+      "name": "management.security.roles",
+      "description": "Comma-separated list of roles that can access the management endpoint.",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties$Security",
+      "defaultValue": "stateless",
+      "name": "management.security.sessions",
+      "description": "Session creating policy for security use (always, never, if_required,\n stateless).",
+      "type": "org.springframework.boot.actuate.autoconfigure.ManagementServerProperties$SessionCreationPolicy"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$JaasAuthenticationProperties",
+      "defaultValue": "my-domain",
+      "name": "management.shell.auth.jaas.domain",
+      "description": "JAAS domain.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$KeyAuthenticationProperties",
+      "name": "management.shell.auth.key.path",
+      "description": "Path to the authentication key. This should point to a valid \".pem\" file.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$SimpleAuthenticationProperties$User",
+      "defaultValue": "user",
+      "name": "management.shell.auth.simple.user.name",
+      "description": "Login user.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$SimpleAuthenticationProperties$User",
+      "name": "management.shell.auth.simple.user.password",
+      "description": "Login password.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$SpringAuthenticationProperties",
+      "defaultValue": [
+        "ACTUATOR"
+      ],
+      "name": "management.shell.auth.spring.roles",
+      "description": "Comma-separated list of required roles to login to the CRaSH console.",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$Auth",
+      "defaultValue": "simple",
+      "name": "management.shell.auth.type",
+      "description": "Authentication type. Auto-detected according to the environment (i.e. if Spring\n Security is available, \"spring\" is used by default).",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties",
+      "defaultValue": [
+        "classpath*:\/commands\/**",
+        "classpath*:\/crash\/commands\/**"
+      ],
+      "deprecated": true,
+      "name": "management.shell.command-path-patterns",
+      "description": "Patterns to use to look for commands.",
+      "type": "java.lang.String[]",
+      "deprecation": {}
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties",
+      "defaultValue": -1,
+      "deprecated": true,
+      "name": "management.shell.command-refresh-interval",
+      "description": "Scan for changes and update the command if necessary (in seconds).",
+      "type": "java.lang.Integer",
+      "deprecation": {}
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties",
+      "defaultValue": [
+        "classpath*:\/crash\/*"
+      ],
+      "deprecated": true,
+      "name": "management.shell.config-path-patterns",
+      "description": "Patterns to use to look for configurations.",
+      "type": "java.lang.String[]",
+      "deprecation": {}
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties",
+      "defaultValue": [
+        "jpa*",
+        "jdbc*",
+        "jndi*"
+      ],
+      "deprecated": true,
+      "name": "management.shell.disabled-commands",
+      "description": "Comma-separated list of commands to disable.",
+      "type": "java.lang.String[]",
+      "deprecation": {}
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties",
+      "defaultValue": [],
+      "deprecated": true,
+      "name": "management.shell.disabled-plugins",
+      "description": "Comma-separated list of plugins to disable. Certain plugins are disabled by default\n based on the environment.",
+      "type": "java.lang.String[]",
+      "deprecation": {}
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$Ssh",
+      "defaultValue": 600000,
+      "name": "management.shell.ssh.auth-timeout",
+      "description": "Number of milliseconds after user will be prompted to login again.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$Ssh",
+      "defaultValue": true,
+      "name": "management.shell.ssh.enabled",
+      "description": "Enable CRaSH SSH support.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$Ssh",
+      "defaultValue": 600000,
+      "name": "management.shell.ssh.idle-timeout",
+      "description": "Number of milliseconds after which unused connections are closed.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$Ssh",
+      "name": "management.shell.ssh.key-path",
+      "description": "Path to the SSH server key.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$Ssh",
+      "defaultValue": 2000,
+      "name": "management.shell.ssh.port",
+      "description": "SSH port.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$Telnet",
+      "defaultValue": false,
+      "name": "management.shell.telnet.enabled",
+      "description": "Enable CRaSH telnet support. Enabled by default if the TelnetPlugin is\n available.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.autoconfigure.ShellProperties$Telnet",
+      "defaultValue": 5000,
+      "name": "management.shell.telnet.port",
+      "description": "Telnet port.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.ciphers",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.client-auth",
+      "type": "org.springframework.boot.context.embedded.Ssl$ClientAuth"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.enabled",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.enabled-protocols",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.key-alias",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.key-password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.key-store",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.key-store-password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.key-store-provider",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.key-store-type",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.protocol",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.trust-store",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.trust-store-password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.trust-store-provider",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.context.embedded.Ssl",
+      "name": "management.ssl.trust-store-type",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.trace.TraceProperties",
+      "name": "management.trace.include",
+      "description": "Items to be included in the trace. Defaults to request\/response headers (including\n cookies) and errors.",
+      "type": "java.util.Set<org.springframework.boot.actuate.trace.TraceProperties.Include>"
+    },
+    {
+      "deprecated": true,
+      "name": "spring.git.properties",
+      "description": "Resource reference to a generated git info properties file.",
+      "type": "java.lang.String",
+      "deprecation": {
+        "replacement": "spring.info.git.location"
+      }
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties$Aggregate",
+      "defaultValue": "",
+      "name": "spring.metrics.export.aggregate.key-pattern",
+      "description": "Pattern that tells the aggregator what to do with the keys from the source\n repository. The keys in the source repository are assumed to be period\n separated, and the pattern is in the same format, e.g. \"d.d.k.d\". Here \"d\"\n means \"discard\" and \"k\" means \"keep\" the key segment in the corresponding\n position in the source.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties$Aggregate",
+      "defaultValue": "",
+      "name": "spring.metrics.export.aggregate.prefix",
+      "description": "Prefix for global repository if active. Should be unique for this JVM, but most\n useful if it also has the form \"a.b\" where \"a\" is unique to this logical\n process (this application) and \"b\" is unique to this physical process. If you\n set spring.application.name elsewhere, then the default will be in the right\n form.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties",
+      "name": "spring.metrics.export.delay-millis",
+      "description": "Delay in milliseconds between export ticks. Metrics are exported to external\n sources on a schedule with this delay.",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties",
+      "defaultValue": true,
+      "name": "spring.metrics.export.enabled",
+      "description": "Flag to enable metric export (assuming a MetricWriter is available).",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties",
+      "name": "spring.metrics.export.excludes",
+      "description": "List of patterns for metric names to exclude. Applied after the includes.",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties",
+      "name": "spring.metrics.export.includes",
+      "description": "List of patterns for metric names to include.",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties$Redis",
+      "defaultValue": "keys.spring.metrics",
+      "name": "spring.metrics.export.redis.key",
+      "description": "Key for redis repository export (if active). Should be globally unique for a\n system sharing a redis repository across multiple processes.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties$Redis",
+      "defaultValue": "spring.metrics",
+      "name": "spring.metrics.export.redis.prefix",
+      "description": "Prefix for redis repository if active. Should be globally unique across all\n processes sharing the same repository.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties",
+      "name": "spring.metrics.export.send-latest",
+      "description": "Flag to switch off any available optimizations based on not exporting unchanged\n metric values.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties$Statsd",
+      "name": "spring.metrics.export.statsd.host",
+      "description": "Host of a statsd server to receive exported metrics.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties$Statsd",
+      "defaultValue": 8125,
+      "name": "spring.metrics.export.statsd.port",
+      "description": "Port of a statsd server to receive exported metrics.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties$Statsd",
+      "name": "spring.metrics.export.statsd.prefix",
+      "description": "Prefix for statsd exported metrics.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.actuate.metrics.export.MetricExportProperties",
+      "name": "spring.metrics.export.triggers",
+      "description": "Specific trigger properties per MetricWriter bean name.",
+      "type": "java.util.Map<java.lang.String,org.springframework.boot.actuate.metrics.export.SpecificTriggerProperties>"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.test.database.replace",
+      "type": "org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase$Replace",
+      "description": "Type of existing DataSource to replace.",
+      "defaultValue": "any"
+    },
+    {
+      "name": "spring.test.mockmvc.print",
+      "type": "org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrint",
+      "description": "MVC Print option.",
+      "defaultValue": "default"
+    }
+  ]
+}
