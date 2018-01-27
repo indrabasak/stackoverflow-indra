@@ -8,3 +8,6 @@ Spring Test Examples
 - `UserControllerTest.java` is an example related to stackoverflow question on [Testing For ID using JsonPath in Spring Test with Nested Collection](https://stackoverflow.com/questions/47357621/testing-for-id-using-jsonpath-in-spring-test-with-nested-collection/47387020#47387020)
 
 - `SpringConfigurationMetadataProcessorTest.java` is an example related to stackoverflow question on [How to convert Spring Boot configuration meta-data files to HTML](https://stackoverflow.com/questions/47721418/how-to-convert-spring-boot-configuration-meta-data-files-to-html)
+
+- `TestControllerTest.java` is an example related to stackoverflow question on [How do I test a custom Spring Boot Actuator endpoint?
+](https://stackoverflow.com/questions/48469479/how-do-i-test-a-custom-spring-boot-actuator-endpoint/48480122#48480122)
