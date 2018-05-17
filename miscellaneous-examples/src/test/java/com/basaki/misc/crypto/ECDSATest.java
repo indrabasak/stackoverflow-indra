@@ -79,10 +79,10 @@ public class ECDSATest {
         assertNotNull(pair);
         assertNotNull(pair.getPublic());
 
-        String keyStr = ECDSA.toHexString(pair.getPublic().getEncoded());
+        String keyStr = ECDSA.convertBytesToHex(pair.getPublic().getEncoded());
 
         PublicKey derivedPublicKey =
-                ECDSA.getPublicKey(ECDSA.toByteArray(keyStr));
+                ECDSA.getPublicKey(ECDSA.hexStringToByteArray(keyStr));
         assertNotNull(derivedPublicKey);
         assertEquals(pair.getPublic(), derivedPublicKey);
     }
@@ -95,10 +95,10 @@ public class ECDSATest {
         assertNotNull(pair);
         assertNotNull(pair.getPublic());
 
-        String keyStr = ECDSA.toHexString(pair.getPrivate().getEncoded());
+        String keyStr = ECDSA.convertBytesToHex(pair.getPrivate().getEncoded());
 
         PrivateKey derivedPrivateKey =
-                ECDSA.getPrivateKey(ECDSA.toByteArray(keyStr));
+                ECDSA.getPrivateKey(ECDSA.hexStringToByteArray(keyStr));
         assertNotNull(derivedPrivateKey);
         assertEquals(pair.getPrivate(), derivedPrivateKey);
     }

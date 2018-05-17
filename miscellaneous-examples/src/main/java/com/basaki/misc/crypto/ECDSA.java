@@ -72,11 +72,11 @@ public class ECDSA {
         return Base64.getDecoder().decode(input);
     }
 
-    public static String toHexString(byte[] bytes) {
+    public static String convertBytesToHex(byte[] bytes) {
         return DatatypeConverter.printHexBinary(bytes);
     }
 
-    public static byte[] toByteArray(String hexString) {
+    public static byte[] hexStringToByteArray(String hexString) {
         return DatatypeConverter.parseHexBinary(hexString);
     }
 }
