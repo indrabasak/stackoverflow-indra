@@ -11,3 +11,5 @@ Spring Test Examples
 
 - `TestControllerTest.java` is an example related to stackoverflow question on [How do I test a custom Spring Boot Actuator endpoint?
 ](https://stackoverflow.com/questions/48469479/how-do-i-test-a-custom-spring-boot-actuator-endpoint/48480122#48480122)
+
+- `FooMockAllInstanceTest.java` is an example related to stackoverflow question on [Mockito: mock instance method for all instances of a class](https://stackoverflow.com/questions/46185469/mockito-mock-instance-method-for-all-instances-of-a-class/46185629#46185629)
