@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
@@ -36,15 +37,16 @@ import org.eclipse.aether.transport.wagon.WagonTransporterFactory;
 
 public class EffectivePomBuilder {
 
-    private static final String WORKING_DIR =
-            "/Users/indra.basak/Development/examples/stackoverflow-indra/effective-pom/target";
-
     public static void main(String[] args) throws Exception {
+        Path path = Paths.get("./target");
+        Files.createDirectories(path);
+        String workingDir = path.toString();
+
         DefaultServiceLocator locator = serviceLocator();
         RepositorySystem system = locator.getService(RepositorySystem.class);
         DefaultRepositorySystemSession
                 session = MavenRepositorySystemUtils.newSession();
-        LocalRepository localRepo = new LocalRepository(WORKING_DIR + "/m2");
+        LocalRepository localRepo = new LocalRepository(workingDir + "/m2");
         session.setLocalRepositoryManager(
                 system.newLocalRepositoryManager(session, localRepo));
 
@@ -71,7 +73,7 @@ public class EffectivePomBuilder {
         String springBootPOMPath =
                 "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot/2.1.4.RELEASE/spring-boot-2.1.4.RELEASE.pom";
         File springBootPOM = downloadPOM(springBootPOMPath,
-                HttpClientBuilder.create().build());
+                HttpClientBuilder.create().build(), workingDir);
         modelBuildingRequest.setPomFile(springBootPOM);
         modelBuildingRequest.setModelResolver(modelResolver);
         DefaultModelBuilder
@@ -95,10 +97,10 @@ public class EffectivePomBuilder {
     }
 
     private static File downloadPOM(String pomURL,
-            HttpClient client) throws Exception {
+            HttpClient client, String workingDir) throws Exception {
         HttpGet request = new HttpGet(pomURL);
         HttpResponse response = client.execute(request);
-        File outputFile = new File(WORKING_DIR + "/" + Paths.get(
+        File outputFile = new File(workingDir + "/" + Paths.get(
                 new URI(pomURL).getPath()).getFileName().toString());
         System.out.println("**** " + outputFile.getAbsolutePath());
         try (InputStream contentStream = response.getEntity().getContent()) {
