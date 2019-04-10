@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.basaki</groupId>
-  <artifactId>stackoverflow-indra</artifactId>
-  <version>1.0.0</version>
-  <packaging>pom</packaging>
-  <name>Archetype - stackoverflow-indra</name>
-  <url>http://maven.apache.org</url>
-  <modules>
-    <module>custom-classloader</module>
-    <module>spring-aop-param</module>
-    <module>spring-security-filter</module>
-    <module>lambda-examples</module>
-    <module>spring-test-examples</module>
-    <module>spring-actuator-security</module>
-    <module>miscellaneous-examples</module>
-    <module>spring-aspectj-example</module>
-    <module>spring-fox-examples</module>
-  </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.basaki</groupId>
+    <artifactId>stackoverflow-indra</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Archetype - stackoverflow-indra</name>
+    <url>http://maven.apache.org</url>
+    <modules>
+        <module>custom-classloader</module>
+        <module>spring-aop-param</module>
+        <module>spring-security-filter</module>
+        <module>lambda-examples</module>
+        <module>spring-test-examples</module>
+        <module>spring-actuator-security</module>
+        <module>miscellaneous-examples</module>
+        <module>spring-aspectj-example</module>
+        <module>spring-fox-examples</module>
+        <module>effective-pom</module>
+    </modules>
 </project>
