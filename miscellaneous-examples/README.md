@@ -7,3 +7,5 @@ Miscellaneous Examples
 - `FindResource.java` has the solution to [JAR manifest Class-Path, use folder instead of jar](https://stackoverflow.com/questions/46848816/jar-manifest-class-path-use-folder-instead-of-jar)
 - `MyModel.java` has the solution to [Additional methods in java Builder class (lombok annotation)](https://stackoverflow.com/questions/47185622/additional-methods-in-java-builder-class-lombok-annotation/47194753#47194753)
 - `ECDSA.java` and `ECDSATest.java` have the solution to [Converting EC PublicKey Hex String to PublicKey](https://stackoverflow.com/questions/50275351/converting-ec-publickey-hex-string-to-publickey)
+- `LongRunningJob.java` and `PerformLongRunningJob.java` have the solution to [Interrupt if API call to payment processor takes over 60 seconds
+](https://stackoverflow.com/questions/55598657/interrupt-if-api-call-to-payment-processor-takes-over-60-seconds/55700414#55700414)
