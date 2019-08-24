@@ -10,6 +10,8 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.ArrayList;
+
 /**
  * {@code SwaggerConfiguration} is the configuration for setting up swagger for
  * the author controller. The swagger documentation can be viewed at {@code
@@ -52,6 +54,6 @@ public class SwaggerConfiguration {
         Contact contact = new Contact("Indra Basak", "",
                 "developer@gmail.com");
         return new ApiInfo(title, description, "1.0", "terms of controller url",
-                contact, "license", "license url");
+                contact, "license", "license url", new ArrayList<>());
     }
 }

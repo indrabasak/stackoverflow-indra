@@ -14,9 +14,6 @@ info:
     version: 1.0.0
 
 security:
-  user:
-    name: admin
-    password: secret
   auth:
     users:
       userA:
@@ -26,12 +23,32 @@ security:
 
 #Exposes Spring actuator endpoints
 management:
-  context-path: /manage
-  security:
-    enabled: true
+#  security:
+#    enabled: true
 #    roles: ACTUATOR
 #    roles: SUPERUSER
+  health:
+    diskspace:
+      enabled: true
+    db:
+      enabled: true
+    details:
+      enabled: true
+    application:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path: /manage
+      exposure:
+        include: "*"
 
 spring:
   datasource:
     url: jdbc:jtds:sqlserver://%%mysystemName%%/;instance=mydb;domain=DHC;trusted=true;
+#  security:
+#    user:
+#      name: admin
+#      password: secret

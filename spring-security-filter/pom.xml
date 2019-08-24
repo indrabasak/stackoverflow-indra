@@ -20,8 +20,8 @@
         <java.version>1.8</java.version>
         <junit.version>4.12</junit.version>
         <lombok.version>1.16.16</lombok.version>
-        <spring.boot.version>1.5.3.RELEASE</spring.boot.version>
-        <swagger.version>2.6.1</swagger.version>
+        <spring.boot.version>2.1.7.RELEASE</spring.boot.version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencyManagement>
@@ -57,11 +57,7 @@
         <!-- enables checks via /health, /info, /metrics, /trace -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-actuator-docs</artifactId>
+            <artifactId>spring-boot-actuator-autoconfigure</artifactId>
         </dependency>
 
         <dependency>

@@ -25,7 +25,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
  */
 @Configuration
 @EnableWebSecurity
-@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
+//@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 @EnableConfigurationProperties(SecurityAuthProperties.class)
 @Slf4j
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {

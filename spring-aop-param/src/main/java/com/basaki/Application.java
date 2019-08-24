@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
+//import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.core.io.ClassPathResource;
@@ -27,11 +27,10 @@ import org.yaml.snakeyaml.Yaml;
  * @author Indra Basak
  * @since 10/4/17
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.basaki"})
 @EnableAspectJAutoProxy
 @EnableScheduling
 //@EnableOAuth2Sso
-@ComponentScan(basePackages = {"com.basaki"})
 @Component
 public class Application {
 

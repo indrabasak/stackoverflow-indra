@@ -36,6 +36,6 @@ public class BookService {
     }
 
     public Book read(UUID id) {
-        return repository.findOne(id);
+        return repository.findById(id).get();
     }
 }

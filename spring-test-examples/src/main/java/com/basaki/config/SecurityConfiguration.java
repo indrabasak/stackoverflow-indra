@@ -5,15 +5,21 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.core.GrantedAuthorityDefaults;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+
+import java.util.Arrays;
+import java.util.Map;
 
 /**
  * {@code SecurityConfiguration} is the configuration for setting up
@@ -25,7 +31,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
  */
 @Configuration
 @EnableWebSecurity
-@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
+//@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 @EnableConfigurationProperties(SecurityAuthProperties.class)
 @Slf4j
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -54,15 +60,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 SessionCreationPolicy.STATELESS);
     }
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/", "/v2/api-docs", "/configuration/ui",
-                "/swagger-resources",
-                "/configuration/security", "/swagger-ui.html",
-                "/webjars/**", "/swagger-resources/configuration/ui",
-                "/swagge‌​r-ui.html", "/docs/**", "/ping",
-                "/swagger-resources/configuration/security");
-    }
+//    @Override
+//    public void configure(WebSecurity web) throws Exception {
+//        web.ignoring().antMatchers("/", "/v2/api-docs", "/configuration/ui",
+//                "/swagger-resources",
+//                "/configuration/security", "/swagger-ui.html",
+//                "/webjars/**", "/swagger-resources/configuration/ui",
+//                "/swagge‌​r-ui.html", "/docs/**", "/ping",
+//                "/swagger-resources/configuration/security");
+//    }
 
     /**
      * Configures the security provider. The base class delegates the
@@ -71,17 +77,35 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
      * @param auth builder for creating the security manager
      * @throws Exception
      */
-    protected void configure(AuthenticationManagerBuilder auth) throws
-            Exception {
+    protected void configure(AuthenticationManagerBuilder auth) {
         properties.getUsers().entrySet().stream()
                 .forEach(e -> {
                     try {
                         auth.inMemoryAuthentication().withUser(
-                                e.getKey()).password(
+                                e.getKey()).password("{noop}" +
                                 e.getValue().getPassword()).roles("USER");
                     } catch (Exception excp) {
                         throw new RuntimeException(excp);
                     }
                 });
+    }
+
+    @Override
+    public void configure(WebSecurity web) {
+        web.ignoring().antMatchers("/v2/api-docs");
+        web.ignoring().antMatchers("/swagger.json");
+        web.ignoring().antMatchers("/swagger-ui.html");
+        web.ignoring().antMatchers("/swagger-resources/**");
+    }
+
+    /**
+     * Creates a new instance of GrantedAuthorityDefaults omitting ROLE_ prefix.
+     *
+     * @return new instance of GrantedAuthorityDefaults configured not to add
+     * ROLE_ prefix.
+     */
+    @Bean
+    public GrantedAuthorityDefaults grantedAuthorityDefaults() {
+        return new GrantedAuthorityDefaults("");
     }
 }

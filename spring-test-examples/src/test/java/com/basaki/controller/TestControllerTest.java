@@ -39,6 +39,7 @@ public class TestControllerTest {
 
     @Test
     public void testGet() throws Exception {
+        //MvcResult result = mvc.perform(get("/manage/test/get")
         MvcResult result = mvc.perform(get("/manage/test/get")
                 .with(user("admin").password("secret"))
                 .contentType(MediaType.APPLICATION_JSON)

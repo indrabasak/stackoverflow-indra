@@ -16,14 +16,15 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <aspect.version>1.8.10</aspect.version>
-        <jackson.version>2.8.8</jackson.version>
+        <aspect.version>1.9.4</aspect.version>
+        <jackson.version>2.9.9</jackson.version>
         <java.version>1.8</java.version>
         <junit.version>4.12</junit.version>
         <lombok.version>1.16.16</lombok.version>
-        <mockito.version>1.10.19</mockito.version>
-        <spring.boot.version>1.5.8.RELEASE</spring.boot.version>
-        <swagger.version>2.6.1</swagger.version>
+        <mockito.version>2.23.0</mockito.version>
+        <powermock.version>2.0.2</powermock.version>
+        <spring.boot.version>2.1.7.RELEASE</spring.boot.version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencyManagement>
@@ -64,6 +65,7 @@
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>
             <artifactId>spring-security-oauth2</artifactId>
+            <version>2.1.5.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -138,14 +140,15 @@
         </dependency>
         <dependency>
             <groupId>org.powermock</groupId>
-            <artifactId>powermock-module-junit4</artifactId>
-            <version>1.7.3</version>
+            <artifactId>powermock-api-mockito2</artifactId>
+            <version>${powermock.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.powermock</groupId>
-            <artifactId>powermock-api-mockito</artifactId>
-            <version>1.7.3</version>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

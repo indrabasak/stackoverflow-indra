@@ -18,9 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
 
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.verify;
+import static org.mockito.ArgumentMatchers.any;
 import static org.powermock.api.mockito.PowerMockito.when;
 
 /**
@@ -41,6 +39,9 @@ public class ExampleAspectTest {
     @Mock
     private Log logger;
 
+    @Mock
+    private Log fallbackLogger;
+
     private ClassA proxy;
 
     @Before
@@ -57,6 +58,13 @@ public class ExampleAspectTest {
         when(LogFactory.getLog(any(Class.class))).
                 thenReturn(logger);
         when(logger.isDebugEnabled()).thenReturn(true);
+
+        PowerMockito.mockStatic(LogFactory.class);
+        when(LogFactory.getLog("org.springframework.web.HttpLogging")).
+                thenReturn(fallbackLogger);
+        when(LogFactory.getLog(any(Class.class))).
+                thenReturn(fallbackLogger);
+        when(fallbackLogger.isDebugEnabled()).thenReturn(true);
 
 
         MockitoAnnotations.initMocks(this);

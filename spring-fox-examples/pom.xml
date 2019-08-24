@@ -22,8 +22,8 @@
         <junit.version>4.12</junit.version>
         <lombok.version>1.16.16</lombok.version>
         <mockito.version>1.10.19</mockito.version>
-        <spring.boot.version>1.5.8.RELEASE</spring.boot.version>
-        <swagger.version>2.7.0</swagger.version>
+        <spring.boot.version>2.1.7.RELEASE</spring.boot.version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencyManagement>
