@@ -100,6 +100,8 @@ employee.setId(3L);
 employee.setFirstName("Sam");
 employee.setLastName("Fox");
 employee.setEmail("sfox@gmail.com");
+
+EmployeeControllerApi api = new EmployeeControllerApi();
 Employee response = api.createEmployeeUsingPOST(employee);
 System.out.println(response);
 ```
