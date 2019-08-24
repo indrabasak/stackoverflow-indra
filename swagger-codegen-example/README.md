@@ -87,8 +87,8 @@ The other important class is `EmployeeControllerApiTest.java`. It shows you how 
 The generated client project also provides a `README` file which can be very helpful.
 
 ## URL Changes
-The `ApiClient` class contains information related to establishing a HTTP client connection. Please make sure the `basePsth`
-to your REST application is correct. In the generated example, the `basepath` had a `https://localhost:8080` connection 
+The `ApiClient` class contains information related to establishing a HTTP client connection. Please make sure the `basePath`
+to your REST application is correct. In the generated example, the `basePath` had a `https://localhost:8080` URL 
 instead of `http://localhost:8080`.
     
 ## Example REST Call
