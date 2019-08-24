@@ -2,12 +2,23 @@
 language: java
 jdk:
   - oraclejdk9
+
+matrix:
+  include:
+    - jdk: openjdk9
+      before_install:
+        - rm "${JAVA_HOME}/lib/security/cacerts"
+        - ln -s /etc/ssl/certs/java/cacerts "${JAVA_HOME}/lib/security/cacerts"
+
 before_script:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
 script: mvn clean compile test
+
 notifications:
   email:
     - indra.basak1@gmail.com
   on_success: change
   on_failure: always
   use_notice: true
+
