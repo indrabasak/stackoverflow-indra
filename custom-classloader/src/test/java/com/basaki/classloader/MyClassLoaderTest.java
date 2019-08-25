@@ -5,6 +5,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -99,6 +101,7 @@ public class MyClassLoaderTest {
         method.invoke(obj);
     }
 
+    @Ignore
     @Test
     public void testMyClassLoaderFail() throws Exception {
         URL url = MyClassLoaderTest.class

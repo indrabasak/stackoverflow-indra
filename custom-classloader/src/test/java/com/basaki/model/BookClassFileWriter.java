@@ -24,7 +24,8 @@ public class BookClassFileWriter {
         long length = new File(inputFile).length();
         byte[] bytes = new byte[(int) length];
         inputStream.read(bytes);
-        new sun.misc.BASE64Encoder().encode(bytes);
+        Base64.getEncoder().encode(bytes);
+        //new sun.misc.BASE64Encoder().encode(bytes);
         String bookClazz = Base64.getUrlEncoder().encodeToString(bytes);
         //String bookClazz = new sun.misc.BASE64Encoder().encode(bytes);
         System.out.println(bookClazz);
