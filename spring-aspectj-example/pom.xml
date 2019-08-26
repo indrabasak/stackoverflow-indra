@@ -9,7 +9,6 @@
         <artifactId>stackoverflow-indra</artifactId>
         <version>1.0.0</version>
     </parent>
-    <groupId>com.basaki</groupId>
     <artifactId>spring-aspectj-example</artifactId>
     <version>1.0.0</version>
     <name>spring-aspectj-example</name>
@@ -17,7 +16,7 @@
 
     <properties>
         <aspectj.version>1.9.4</aspectj.version>
-        <jackson.version>2.8.8</jackson.version>
+        <jackson.version>2.9.9</jackson.version>
         <java.version>1.8</java.version>
         <junit.version>4.12</junit.version>
         <lombok.version>1.18.8</lombok.version>
@@ -197,18 +196,18 @@
                         </goals>
                     </execution>
                 </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjrt</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjtools</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>
-                </dependencies>
+<!--                <dependencies>-->
+<!--                    <dependency>-->
+<!--                        <groupId>org.aspectj</groupId>-->
+<!--                        <artifactId>aspectjrt</artifactId>-->
+<!--                        <version>${aspectj.version}</version>-->
+<!--                    </dependency>-->
+<!--                    <dependency>-->
+<!--                        <groupId>org.aspectj</groupId>-->
+<!--                        <artifactId>aspectjtools</artifactId>-->
+<!--                        <version>${aspectj.version}</version>-->
+<!--                    </dependency>-->
+<!--                </dependencies>-->
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
