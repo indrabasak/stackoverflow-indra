@@ -1,0 +1,541 @@
+<html>
+<head>
+    <title>Spring Configuration Metadata Example</title>
+</head>
+<body>
+<h1>Spring Configuration Metadata Example</h1>
+
+<section>
+    <h1>Hints</h1>
+        <section>
+        <dl>
+            <dt><b>name: </b>endpoints.cors.allowed-headers</dt>
+                <dt><b>values:</b></dt>
+                        <dd><b>value: </b>*</dd>
+                    <br/>
+                <dt><b>providers:</b></dt>
+                        <dd><b>name: </b>any</dd>
+                    <br/>
+            </dl>
+        </section>
+        <section>
+        <dl>
+            <dt><b>name: </b>endpoints.cors.allowed-methods</dt>
+                <dt><b>values:</b></dt>
+                        <dd><b>value: </b>*</dd>
+                    <br/>
+                <dt><b>providers:</b></dt>
+                        <dd><b>name: </b>any</dd>
+                    <br/>
+            </dl>
+        </section>
+        <section>
+        <dl>
+            <dt><b>name: </b>endpoints.cors.allowed-origins</dt>
+                <dt><b>values:</b></dt>
+                        <dd><b>value: </b>*</dd>
+                    <br/>
+                <dt><b>providers:</b></dt>
+                        <dd><b>name: </b>any</dd>
+                    <br/>
+            </dl>
+        </section>
+        <section>
+        <dl>
+            <dt><b>name: </b>management.health.status.order</dt>
+                <dt><b>values:</b></dt>
+                        <dd><b>value: </b>UNKNOWN</dd>
+                    <br/>
+                        <dd><b>value: </b>UP</dd>
+                    <br/>
+                        <dd><b>value: </b>DOWN</dd>
+                    <br/>
+                        <dd><b>value: </b>OUT_OF_SERVICE</dd>
+                    <br/>
+                <dt><b>providers:</b></dt>
+                        <dd><b>name: </b>any</dd>
+                    <br/>
+            </dl>
+        </section>
+        <section>
+        <dl>
+            <dt><b>name: </b>management.shell.auth.type</dt>
+                <dt><b>values:</b></dt>
+                        <dd><b>value: </b>simple</dd>
+                        <dd><b>description: </b>Use a simple user/password based authentication.</dd>
+                    <br/>
+                        <dd><b>value: </b>spring</dd>
+                        <dd><b>description: </b>Integrate with Spring Security.</dd>
+                    <br/>
+                        <dd><b>value: </b>key</dd>
+                        <dd><b>description: </b>Use a Key-based authentication.</dd>
+                    <br/>
+                        <dd><b>value: </b>jaas</dd>
+                        <dd><b>description: </b>Use JAAS authentication.</dd>
+                    <br/>
+        </section>
+        <section>
+        <dl>
+            <dt><b>name: </b>spring.kafka.consumer.key-deserializer</dt>
+                <dt><b>providers:</b></dt>
+                        <dd><b>name: </b>handle-as</dd>
+                        <dd><b>parameters:</b></dd>
+                            <dd>&nbsp;&nbsp;&nbsp;&nbsp;<b>target: </b>org.apache.kafka.common.serialization.Deserializer
+                            </dd>
+                    <br/>
+            </dl>
+        </section>
+        <section>
+        <dl>
+            <dt><b>name: </b>spring.kafka.consumer.value-deserializer</dt>
+                <dt><b>providers:</b></dt>
+                        <dd><b>name: </b>handle-as</dd>
+                        <dd><b>parameters:</b></dd>
+                            <dd>&nbsp;&nbsp;&nbsp;&nbsp;<b>target: </b>org.apache.kafka.common.serialization.Deserializer
+                            </dd>
+                    <br/>
+            </dl>
+        </section>
+        <section>
+        <dl>
+            <dt><b>name: </b>spring.kafka.producer.key-serializer</dt>
+                <dt><b>providers:</b></dt>
+                        <dd><b>name: </b>handle-as</dd>
+                        <dd><b>parameters:</b></dd>
+                            <dd>&nbsp;&nbsp;&nbsp;&nbsp;<b>target: </b>org.apache.kafka.common.serialization.Serializer
+                            </dd>
+                    <br/>
+            </dl>
+        </section>
+        <section>
+        <dl>
+            <dt><b>name: </b>spring.kafka.producer.value-serializer</dt>
+                <dt><b>providers:</b></dt>
+                        <dd><b>name: </b>handle-as</dd>
+                        <dd><b>parameters:</b></dd>
+                            <dd>&nbsp;&nbsp;&nbsp;&nbsp;<b>target: </b>org.apache.kafka.common.serialization.Serializer
+                            </dd>
+                    <br/>
+            </dl>
+        </section>
+</section>
+
+<section>
+    <h1>Groups</h1>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.EndpointProperties</dt>
+                        <dt><b>name: </b> endpoints</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.EndpointProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.HalJsonMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.actuator</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.HalJsonMvcEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.auditevents</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.jmx.AuditEventsJmxEndpoint</dt>
+                        <dt><b>name: </b> endpoints.auditevents</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.jmx.AuditEventsJmxEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint</dt>
+                        <dt><b>name: </b> endpoints.autoconfig</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.BeansEndpoint</dt>
+                        <dt><b>name: </b> endpoints.beans</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.BeansEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint</dt>
+                        <dt><b>name: </b> endpoints.configprops</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties</dt>
+                        <dt><b>name: </b> endpoints.cors</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.EndpointCorsProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.docs</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.docs.curies</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.DocsMvcEndpoint$Curies</dt>
+                        <dt><b>sourceMethod: </b> getCuries()</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.DumpEndpoint</dt>
+                        <dt><b>name: </b> endpoints.dump</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.DumpEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.EnvironmentEndpoint</dt>
+                        <dt><b>name: </b> endpoints.env</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.EnvironmentEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.env</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.FlywayEndpoint</dt>
+                        <dt><b>name: </b> endpoints.flyway</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.FlywayEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.HealthMvcEndpointProperties</dt>
+                        <dt><b>name: </b> endpoints.health</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.HealthMvcEndpointProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.health</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.HealthEndpoint</dt>
+                        <dt><b>name: </b> endpoints.health</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.HealthEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.heapdump</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.InfoEndpoint</dt>
+                        <dt><b>name: </b> endpoints.info</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.InfoEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportProperties</dt>
+                        <dt><b>name: </b> endpoints.jmx</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.jolokia</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.JolokiaMvcEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.LiquibaseEndpoint</dt>
+                        <dt><b>name: </b> endpoints.liquibase</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.LiquibaseEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.logfile</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.LogFileMvcEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.LoggersEndpoint</dt>
+                        <dt><b>name: </b> endpoints.loggers</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.LoggersEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.loggers</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.RequestMappingEndpoint</dt>
+                        <dt><b>name: </b> endpoints.mappings</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.RequestMappingEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.metrics</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.MetricsEndpoint</dt>
+                        <dt><b>name: </b> endpoints.metrics</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.MetricsEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.MetricFilterProperties</dt>
+                        <dt><b>name: </b> endpoints.metrics.filter</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.MetricFilterProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.ShutdownEndpoint</dt>
+                        <dt><b>name: </b> endpoints.shutdown</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.ShutdownEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpoint</dt>
+                        <dt><b>name: </b> endpoints.shutdown</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.endpoint.TraceEndpoint</dt>
+                        <dt><b>name: </b> endpoints.trace</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.endpoint.TraceEndpoint</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.JolokiaProperties</dt>
+                        <dt><b>name: </b> jolokia</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.JolokiaProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ManagementServerProperties</dt>
+                        <dt><b>name: </b> management</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.ManagementServerProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.health.DiskSpaceHealthIndicatorProperties</dt>
+                        <dt><b>name: </b> management.health.diskspace</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.health.DiskSpaceHealthIndicatorProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.health.ElasticsearchHealthIndicatorProperties</dt>
+                        <dt><b>name: </b> management.health.elasticsearch</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.health.ElasticsearchHealthIndicatorProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.HealthIndicatorProperties</dt>
+                        <dt><b>name: </b> management.health.status</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.HealthIndicatorProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.InfoContributorProperties</dt>
+                        <dt><b>name: </b> management.info</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.InfoContributorProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.InfoContributorProperties</dt>
+                        <dt><b>name: </b> management.info.git</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.InfoContributorProperties$Git</dt>
+                        <dt><b>sourceMethod: </b> getGit()</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ManagementServerProperties</dt>
+                        <dt><b>name: </b> management.security</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.ManagementServerProperties$Security</dt>
+                        <dt><b>sourceMethod: </b> getSecurity()</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties</dt>
+                        <dt><b>name: </b> management.shell</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties</dt>
+                        <dt><b>name: </b> management.shell.auth</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$Auth</dt>
+                        <dt><b>sourceMethod: </b> getAuth()</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$JaasAuthenticationProperties</dt>
+                        <dt><b>name: </b> management.shell.auth.jaas</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$JaasAuthenticationProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$KeyAuthenticationProperties</dt>
+                        <dt><b>name: </b> management.shell.auth.key</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$KeyAuthenticationProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$SimpleAuthenticationProperties</dt>
+                        <dt><b>name: </b> management.shell.auth.simple</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$SimpleAuthenticationProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$SimpleAuthenticationProperties</dt>
+                        <dt><b>name: </b> management.shell.auth.simple.user</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$SimpleAuthenticationProperties$User</dt>
+                        <dt><b>sourceMethod: </b> getUser()</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$SpringAuthenticationProperties</dt>
+                        <dt><b>name: </b> management.shell.auth.spring</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$SpringAuthenticationProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties</dt>
+                        <dt><b>name: </b> management.shell.ssh</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$Ssh</dt>
+                        <dt><b>sourceMethod: </b> getSsh()</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties</dt>
+                        <dt><b>name: </b> management.shell.telnet</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.autoconfigure.ShellProperties$Telnet</dt>
+                        <dt><b>sourceMethod: </b> getTelnet()</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.autoconfigure.ManagementServerProperties</dt>
+                        <dt><b>name: </b> management.ssl</dt>
+                        <dt><b>type: </b> org.springframework.boot.context.embedded.Ssl</dt>
+                        <dt><b>sourceMethod: </b> getSsl()</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.trace.TraceProperties</dt>
+                        <dt><b>name: </b> management.trace</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.trace.TraceProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.metrics.export.MetricExportProperties</dt>
+                        <dt><b>name: </b> spring.metrics.export</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.metrics.export.MetricExportProperties</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.metrics.export.MetricExportProperties</dt>
+                        <dt><b>name: </b> spring.metrics.export.aggregate</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.metrics.export.MetricExportProperties$Aggregate</dt>
+                        <dt><b>sourceMethod: </b> getAggregate()</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.metrics.export.MetricExportProperties</dt>
+                        <dt><b>name: </b> spring.metrics.export.redis</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.metrics.export.MetricExportProperties$Redis</dt>
+                        <dt><b>sourceMethod: </b> getRedis()</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>sourceType: </b> org.springframework.boot.actuate.metrics.export.MetricExportProperties</dt>
+                        <dt><b>name: </b> spring.metrics.export.statsd</dt>
+                        <dt><b>type: </b> org.springframework.boot.actuate.metrics.export.MetricExportProperties$Statsd</dt>
+                        <dt><b>sourceMethod: </b> getStatsd()</dt>
+                </dl>
+            </section>
+    <h1>Properties</h1>
+            <section>
+                <dl>
+                        <dt><b>name: </b> spring.test.database.replace</dt>
+                        <dt><b>description: </b> Type of existing DataSource to replace.</dt>
+                        <dt><b>type: </b> org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase$Replace</dt>
+                            <dt><b>defaultValue: </b> any</dt>
+                </dl>
+            </section>
+            <section>
+                <dl>
+                        <dt><b>name: </b> spring.test.mockmvc.print</dt>
+                        <dt><b>description: </b> MVC Print option.</dt>
+                        <dt><b>type: </b> org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrint</dt>
+                            <dt><b>defaultValue: </b> default</dt>
+                </dl>
+            </section>
+</section>
+
+</body>
+</html>

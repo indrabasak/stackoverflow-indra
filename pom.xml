@@ -22,5 +22,6 @@
         <module>spring-fox-examples</module>
         <module>effective-pom</module>
         <module>swagger-codegen-example</module>
+        <module>swagger-codegen-client</module>
   </modules>
 </project>

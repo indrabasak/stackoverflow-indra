@@ -38,7 +38,7 @@ public class SwaggerConfiguration {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("employee")
+                //.groupName("employee")
                 .select()
                 .apis(basePackage("com.basaki.controller"))
                 .paths(PathSelectors.any())
